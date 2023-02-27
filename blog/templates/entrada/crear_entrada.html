@@ -1,0 +1,70 @@
+{% extends "entrada/base_entrada.html" %}
+{% load  static %}
+
+{% block content %}
+
+{% include "includes/header.html" %}
+<!--bloque crear entrada-->
+
+<div class="grid-container">
+  <div class="grid-x">
+      <h1 class="cell">Registro de entrada</h1>
+      <form class="cell grid-x grid-margin-x" method="POST"  enctype="multipart/form-data" >{% csrf_token %}
+          <div class="medium-6 cell">
+                <label>titulo:
+                    {{form.title}}
+                  </label>
+                </div>
+                <div class="medium-6 cell">
+                  <label>resumen:
+                    {{form.resume}}
+                  </label>
+                </div>
+                <div class="medium-6 cell">
+                  <label>contenido:
+                    {{form.content}}
+                  </label>
+                </div>
+                <div class="medium-6 cell">
+                  <label>categoria:
+                    {{form.category}}
+                  </label>
+                </div>
+                <div class="medium-12 cell">
+                  <label>tag:
+                    {{form.tag}}
+                  </label>  
+                </div>
+
+                <div class="medium-12 cell">
+                  <label>publico:
+                    {{form.public}}
+                  </label>  
+                </div>
+
+                <div class="medium-12 cell">
+                  <label>portada:
+                    {{form.portada}}
+                  </label>  
+                </div>
+
+                <div class="medium-12 cell">
+                  <label>Inicio:
+                    {{form.in_home}}
+                  </label>  
+                </div>
+
+                <div class="medium-12 cell">
+                  <button type="submit" class=" success button">Guardar</button>
+                </div>
+                
+              </label>
+            </div>
+      </form>
+</div>
+
+<!--bloque crear entrada-->
+
+{% include "includes/footer.html" %}
+
+{% endblock content %}
